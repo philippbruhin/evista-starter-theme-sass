@@ -1,46 +1,47 @@
-@mixin transform($t...){
-  -webkit-transform: $t;
-  -moz-transform: $t;
-  -o-transform: $t;
-  -ms-transform: $t;
-  transform: $t;
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+            border-radius: $radius;
 }
-
-@mixin transition($t...){
-  -webkit-transition: $t;
-  -moz-transition: $t;
-  -o-transition: $t;
-  -ms-transition: $t;
-  transition: $t;
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
 }
-
-@mixin background-size($s){
-  -webkit-background-size: $s;
-  -moz-background-size: $s;
-  -o-background-size: $s;
-  background-size: $s;
+@mixin transition-property($property...) {
+    -moz-transition-property:    $property;
+    -o-transition-property:      $property;
+    -webkit-transition-property: $property;
+    transition-property:         $property;
 }
-
-@mixin box-shadow($shadow){
-  -webkit-box-shadow: $shadow;
-  -moz-box-shaodw: $shadow;
-  box-shadow: $shadow;
+@mixin transition-duration($duration...) {
+    -moz-transition-property:    $duration;
+    -o-transition-property:      $duration;
+    -webkit-transition-property: $duration;
+    transition-property:         $duration;
 }
-
-@mixin placeholder($color){
-  &::-webkit-input-placeholder{
-    color: $color;
-  }
-
-  &::-moz-placeholder{
-    color: $color;
-  }
-
-  &:-ms-input-placeholder{
-    color: $color;
-  }
-
-  &:-moz-placeholder{
-    color: $color;
-  }
+@mixin transition-timing-function($timing...) {
+    -moz-transition-timing-function:    $timing;
+    -o-transition-timing-function:      $timing;
+    -webkit-transition-timing-function: $timing;
+    transition-timing-function:         $timing;
+}
+@mixin transition-delay($delay...) {
+    -moz-transition-delay:    $delay;
+    -o-transition-delay:      $delay;
+    -webkit-transition-delay: $delay;
+    transition-delay:         $delay;
+}
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+    @if $inset {
+        -webkit-box-shadow:inset $top $left $blur $color;
+        -moz-box-shadow:inset $top $left $blur $color;
+        box-shadow:inset $top $left $blur $color;
+    } @else {
+        -webkit-box-shadow: $top $left $blur $color;
+        -moz-box-shadow: $top $left $blur $color;
+        box-shadow: $top $left $blur $color;
+    }
 }

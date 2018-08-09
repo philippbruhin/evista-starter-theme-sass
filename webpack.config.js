@@ -34,7 +34,7 @@ const configs = [{
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        use: `file-loader?context=assets/&name=[path][name].[ext]&publicPath=/wp-content/themes/${themeName}/build/`
+        use: 'file-loader?context=assets/&name=[path][name].[ext]&publicPath=/../app/themes/' + themeName + '/build/'
       }
     ]
   },
@@ -51,3 +51,4 @@ const configs = [{
 ]
 
 module.exports = configs
+
